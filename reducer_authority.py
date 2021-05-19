@@ -1,34 +1,18 @@
 import sys
 
-last_site = None
-last_linked_sites = None
+# linked_sites = list()
 authority = 0
-
-linked_sites_dict = dict()
-linked_sites = ''
+hub = 0
 
 for line in sys.stdin:
     line = line.strip().split(' ')
     site = line[0]
-    if len(line) > 3:
-        linked_sites = line[3]
-    if last_site:
-        if last_site == site:
-            authority += int(line[1])
-        else:
-            if last_site == 'site1':
-                print(f'{last_site} {authority} {line[2]} site2,site7,site9')
-            else:
-                print(f'{last_site} {authority} {line[2]} {last_linked_sites}')
-            last_linked_sites = linked_sites
-            authority = int(line[1])
+    links_and_attributes = line[1:]
+    linked_sites = list()
+    if len(links_and_attributes) > 1:
+        linked_sites.append(links_and_attributes[0])
+        authority += int(links_and_attributes[1])
     else:
-        authority = int(line[1])
-        last_linked_sites = linked_sites
-    last_site = site
-
-if last_site:
-    print(f'{last_site} {authority} {line[2]} {last_linked_sites}')
-
-
-
+        hub = int(links_and_attributes[0])
+    linked_sites = ','.join(linked_sites)
+    print(f'{site} {str(linked_sites)} {authority} {hub}')

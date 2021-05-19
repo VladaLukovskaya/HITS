@@ -1,0 +1,5 @@
+site1 site2,site3 1 1
+site2 site4 1 1
+site3 site4,site5 1 1
+site4 site5 1 1
+site5 site2 1 1
