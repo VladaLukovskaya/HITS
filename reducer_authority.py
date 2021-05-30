@@ -1,7 +1,7 @@
 import sys
 
-authority = 0
-hub = 0
+authority = 0.0
+hub = 0.0
 last_site = ''
 site = ''
 sites_list = list()
@@ -21,9 +21,9 @@ for line in sys.stdin:
 
     if len(links_and_attributes) > 1:
         sites_list.append(links_and_attributes[0])
-        authority += int(links_and_attributes[1])
+        authority += float(links_and_attributes[1])
     else:
-        hub = int(links_and_attributes[0])
+        hub = float(links_and_attributes[0])
 
 linked_sites = ','.join(sites_list)
 print(f'{last_site} {linked_sites} {authority} {hub}')
