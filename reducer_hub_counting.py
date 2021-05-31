@@ -1,12 +1,13 @@
+#!/usr/bin/python3
 import sys
 
-authority = 0
-hub = 0
+authority = 0.0
+hub = 0.0
 last_site = ''
 site = ''
 sites_list = list()
-auth_sum = 0
-hub_sum = 0
+auth_sum = 0.0
+hub_sum = 0.0
 
 
 for line in sys.stdin:

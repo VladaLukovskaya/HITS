@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 
 authority = 0.0
@@ -13,8 +14,10 @@ for line in sys.stdin:
 
     if last_site != site and last_site != '':
         linked_sites = ','.join(sites_list)
+        hub = round(hub, 3)
+        authority = round(authority, 3)
         print(f'{last_site} {linked_sites} {authority} {hub}')
-        hub = authority = 0
+        hub = authority = 0.0
         sites_list = list()
 
     links_and_attributes = data[1:]
@@ -26,4 +29,6 @@ for line in sys.stdin:
         hub = float(links_and_attributes[0])
 
 linked_sites = ','.join(sites_list)
+hub = round(hub, 3)
+authority = round(authority, 3)
 print(f'{last_site} {linked_sites} {authority} {hub}')
