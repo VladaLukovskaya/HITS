@@ -15,29 +15,3 @@ for line in stdin:
 auth_sum = round(auth_sum, 3)
 hub_sum = round(hub_sum, 3)
 print(f'000000Sums {auth_sum} {hub_sum}')
-
-
-
-
-
-
-
-
-
-
-
-# data = stdin.readlines()
-# new_data = list()
-#
-# for elem in data:
-#     elem = elem.strip().split(' ')
-#     new_data.append(elem)
-#
-# auth_sum = new_data[-1][-2]
-# hub_sum = new_data[-1][-1]
-#
-# print(f'Sums {auth_sum} {hub_sum}')
-#
-# for elem in new_data[:-1]:
-#     elem = ' '.join(elem)
-#     print(elem)
